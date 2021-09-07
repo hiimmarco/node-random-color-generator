@@ -32,5 +32,6 @@
   "resolutions": {
     "eslint-plugin-react": "7.24.0",
     "eslint-plugin-testing-library": "4.6.0"
-  }
+  },
+  "dependencies": {}
 }
