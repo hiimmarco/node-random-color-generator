@@ -1,3 +1,6 @@
+const a = 1;
+
+
 // Import the script
 const randomColor = require('randomcolor');
 
