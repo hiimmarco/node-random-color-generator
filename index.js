@@ -6,13 +6,8 @@ const chalk = require('chalk');
 
 let finC;
 
-// If user inputs hue and luminosity
-
-if (process.argv[2] && process.argv[3]) {
-  finC = randomColor({
-    hue: process.argv[2],
-    luminosity: process.argv[3],
-  });
+// Function for printing out a color
+function getHex() {
   console.log(
     chalk.hex(finC)(`###############################
 ###############################
@@ -25,6 +20,16 @@ if (process.argv[2] && process.argv[3]) {
 ###############################
 `),
   );
+}
+
+// If user inputs hue and luminosity
+
+if (process.argv[2] && process.argv[3]) {
+  finC = randomColor({
+    hue: process.argv[2],
+    luminosity: process.argv[3],
+  });
+  getHex();
 
   // If user types in 'ask'
 } else if (process.argv[2] === 'ask') {
@@ -35,18 +40,7 @@ if (process.argv[2] && process.argv[3]) {
 else if (process.argv[2]) {
   if (randomColor({ hue: process.argv[2] })) {
     finC = randomColor({ hue: process.argv[2] });
-    console.log(
-      chalk.hex(finC)(`###############################
-###############################
-###############################
-#####                     #####
-#####      ${finC}        #####
-#####                     #####
-###############################
-###############################
-###############################
-`),
-    );
+    getHex();
   } else {
     console.log('Color does not exist');
   }
@@ -55,16 +49,5 @@ else if (process.argv[2]) {
 // If user types in nothing
 else {
   finC = randomColor();
-  console.log(
-    chalk.hex(finC)(`###############################
-###############################
-###############################
-#####                     #####
-#####      ${finC}        #####
-#####                     #####
-###############################
-###############################
-###############################
-`),
-  );
+  getHex();
 }
