@@ -1,5 +1,6 @@
-// Import the script for random color
+// Import the script for random color and chalk
 const randomColor = require('randomcolor');
+const chalk = require('chalk');
 
 // Point the variable color to the function that creates a random color in hex
 const color = randomColor();
@@ -16,7 +17,8 @@ if (process.argv[2] && process.argv[3]) {
       hue: process.argv[2],
       luminosity: process.argv[3],
     });
-    console.log(`###############################
+    console.log(
+      chalk.hex(finC)(`###############################
 ###############################
 ###############################
 #####                     #####
@@ -25,7 +27,8 @@ if (process.argv[2] && process.argv[3]) {
 ###############################
 ###############################
 ###############################
-`);
+`),
+    );
   } else {
     console.log('Color does not exist');
   }
@@ -39,7 +42,8 @@ if (process.argv[2] && process.argv[3]) {
 else if (process.argv[2]) {
   if (randomColor({ hue: process.argv[2] })) {
     finC = randomColor({ hue: process.argv[2] });
-    console.log(`###############################
+    console.log(
+      chalk.hex(finC)(`###############################
 ###############################
 ###############################
 #####                     #####
@@ -48,7 +52,8 @@ else if (process.argv[2]) {
 ###############################
 ###############################
 ###############################
-`);
+`),
+    );
   } else {
     console.log('Color does not exist');
   }
@@ -57,7 +62,8 @@ else if (process.argv[2]) {
 // If user types in nothing
 else {
   finC = randomColor();
-  console.log(`###############################
+  console.log(
+    chalk.hex(finC)(`###############################
 ###############################
 ###############################
 #####                     #####
@@ -66,5 +72,6 @@ else {
 ###############################
 ###############################
 ###############################
-`);
+`),
+  );
 }
