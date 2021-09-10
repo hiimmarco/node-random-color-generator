@@ -9,13 +9,12 @@ let finC;
 // If user inputs hue and luminosity
 
 if (process.argv[2] && process.argv[3]) {
-  if (randomColor({ hue: process.argv[2], luminosity: process.argv[3] })) {
-    finC = randomColor({
-      hue: process.argv[2],
-      luminosity: process.argv[3],
-    });
-    console.log(
-      chalk.hex(finC)(`###############################
+  finC = randomColor({
+    hue: process.argv[2],
+    luminosity: process.argv[3],
+  });
+  console.log(
+    chalk.hex(finC)(`###############################
 ###############################
 ###############################
 #####                     #####
@@ -25,10 +24,7 @@ if (process.argv[2] && process.argv[3]) {
 ###############################
 ###############################
 `),
-    );
-  } else {
-    console.log('Color does not exist');
-  }
+  );
 
   // If user types in 'ask'
 } else if (process.argv[2] === 'ask') {
