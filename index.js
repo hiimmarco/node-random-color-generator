@@ -2,8 +2,7 @@
 const randomColor = require('randomcolor');
 const chalk = require('chalk');
 
-// Logic for user input
-
+// Define variable to store hex value
 let finC;
 
 // Function for printing out a color
@@ -41,8 +40,6 @@ else if (process.argv[2]) {
   if (randomColor({ hue: process.argv[2] })) {
     finC = randomColor({ hue: process.argv[2] });
     getHex();
-  } else {
-    console.log('Color does not exist');
   }
 }
 
