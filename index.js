@@ -2,9 +2,6 @@
 const randomColor = require('randomcolor');
 const chalk = require('chalk');
 
-// Point the variable color to the function that creates a random color in hex
-const color = randomColor();
-
 // Logic for user input
 
 let finC;
