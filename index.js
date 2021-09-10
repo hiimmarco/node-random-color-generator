@@ -1,4 +1,4 @@
-// Import the script
+// Import the script for random color
 const randomColor = require('randomcolor');
 
 // Point the variable color to the function that creates a random color in hex
@@ -6,21 +6,11 @@ const color = randomColor();
 
 // Logic for user input
 
-const possibleColors = [
-  'red',
-  'orange',
-  'yellow',
-  'green',
-  'blue',
-  'purple',
-  'pink',
-  'monochrome',
-];
-const possibleLuminosities = ['light', 'dark', 'bright'];
+let finC;
 
 if (process.argv[2] && process.argv[3]) {
   if (randomColor({ hue: process.argv[2], luminosity: process.argv[3] })) {
-    let finalColor = randomColor({
+    finC = randomColor({
       hue: process.argv[2],
       luminosity: process.argv[3],
     });
@@ -42,30 +32,13 @@ if (process.argv[2] && process.argv[3]) {
   console.log(randomColor());
 }
 
-/*
-let newColor;
-
-if (process.argv[2] && process.argv[3]) {
-  if (
-    process.argv[2] !== possibleColors ||
-    process.argv[3] !== possibleLuminosities
-  ) {
-    console.log('Color does not exist');
-  } else {
-    newColor = randomColor({
-      hue: process.argv[2],
-      luminosity: process.argv[3],
-    });
-  }
-  console.log(newColor);
-} else if (process.argv[2] === 'ask') {
-  console.log('Please type a color');
-} else if (process.argv[2]) {
-  newColor = randomColor({
-    hue: process.argv[2],
-  });
-  console.log(newColor);
-} else {
-  console.log(randomColor());
-}
-*/
+console.log(`###############################
+###############################
+###############################
+#####                     #####
+#####      ${finC}        #####
+#####                     #####
+###############################
+###############################
+###############################
+`);
