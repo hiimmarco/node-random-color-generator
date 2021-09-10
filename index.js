@@ -8,7 +8,7 @@ const color = randomColor();
 
 let finC;
 
-// If user ionputs hue and luminosity
+// If user inputs hue and luminosity
 
 if (process.argv[2] && process.argv[3]) {
   if (randomColor({ hue: process.argv[2], luminosity: process.argv[3] })) {
